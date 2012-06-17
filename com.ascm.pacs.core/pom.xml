@@ -6,6 +6,5 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
-  <groupId>com.ascm.pacs.core</groupId>
   <artifactId>com.ascm.pacs.core</artifactId>
 </project>

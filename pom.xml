@@ -553,6 +553,6 @@
 		<module>com.ascm.pacs.findscp</module>
 		<module>com.ascm.pacs.getscp</module>
 		<module>com.ascm.pacs.movescp</module>
-		<module>com.ascm.pacs.listener</module>
+		<module>com.ascm.pacs.server</module>
 	</modules>
 </project>

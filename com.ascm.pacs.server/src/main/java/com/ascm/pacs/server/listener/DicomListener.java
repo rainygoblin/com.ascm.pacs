@@ -23,15 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
 
-import com.ascm.pacs.common.model.ServerPartition;
-import com.ascm.pacs.common.service.IServerPartitionManager;
-import com.ascm.pacs.dcm.findscp.FindSCP;
-import com.ascm.pacs.dcm.getscp.GetSCP;
-import com.ascm.pacs.dcm.listener.DicomListener;
-import com.ascm.pacs.dcm.listener.DicomListener.DicomListenerThread;
-import com.ascm.pacs.dcm.movescp.MoveSCP;
-import com.ascm.pacs.dcm.storescp.StorageSCP;
-
 @Component
 public final class DicomListener {
 	private static final Logger logger = LoggerFactory
@@ -48,23 +39,9 @@ public final class DicomListener {
 
 	private Map<Integer, Device> workingDevices = new HashMap<Integer, Device>();
 
-	@Autowired
-	private IServerPartitionManager serverPartitionManager;
 
 	@Resource(name = "deviceTaskExecutor")
 	private TaskExecutor taskExecutor;
-
-	@Autowired
-	private StorageSCP storageSCP;
-
-	@Autowired
-	private FindSCP findSCP;
-
-	@Autowired
-	private MoveSCP moveSCP;
-
-	@Autowired
-	private GetSCP getSCP;
 
 	@PostConstruct
 	public void init() {
@@ -123,7 +100,7 @@ public final class DicomListener {
 		ae.setTransferCapability(tc);
 	}
 
-	private class DicomListenerThread implements Runnable {
+	private final class DicomListenerThread implements Runnable {
 
 		private ServerPartition serverPartition;
 

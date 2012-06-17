@@ -547,4 +547,11 @@
 		</pluginManagement>
 	</build>
 
+	<modules>
+		<module>com.ascm.pacs.core</module>
+		<module>com.ascm.pacs.storescp</module>
+		<module>com.ascm.pacs.findscp</module>
+		<module>com.ascm.pacs.getscp</module>
+		<module>com.ascm.pacs.movescp</module>
+	</modules>
 </project>
